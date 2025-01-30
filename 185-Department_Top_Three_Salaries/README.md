@@ -57,16 +57,4 @@ To solve this problem, we can use the `DENSE_RANK()` window function in SQL. Her
 1. **Join the Tables**: Combine the `Employee` and `Department` tables to get the department names.
 2. **Rank Salaries**: Use `DENSE_RANK()` to rank salaries within each department in descending order.
 3. **Filter Top 3 Salaries**: Select only the rows where the rank is less than or equal to 3.
-
----
-
-## SQL Query
-
-```sql
-SELECT d.name AS Department, e.name AS Employee, e.salary AS Salary
-FROM (
-    SELECT 
-        departmentId, 
-        name, 
-        salary,
-        DENSE_RANK() OVER (PARTITION BY departmentId
+ 
